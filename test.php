@@ -1,3 +1,8 @@
 <?php
-echo "Hello, Testing Hub";
-echo "Is this Working";
+class test
+{
+    public function getData($id = null)
+    {
+        return $id;
+    }
+}
