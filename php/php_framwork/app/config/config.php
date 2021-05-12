@@ -8,7 +8,7 @@ define('DB_NAME', 'mvcframework');
 define('APPROOT', dirname(dirname(__FILE__)));
 
 // URLROOT (create dynamic links)
-define('URLROOT', 'localhost/rkaycoder/php/php_framwork');
+define('URLROOT', 'http://localhost/rkaycoder/php/php_framwork');
 
 // settibg up SITENAME
 define('SITENAME', 'RkayCoder');
