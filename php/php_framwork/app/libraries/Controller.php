@@ -6,7 +6,7 @@ class Controller
     {
         // Require model file
         require_once '../app/models/' . $model . '.php';
-        // Initiate model clasee
+        // Initiate model classes
         return new $model();
     }
 

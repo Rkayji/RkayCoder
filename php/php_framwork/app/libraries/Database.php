@@ -23,7 +23,7 @@ class Database
             $this->dbHandler = new PDO($conn, $this->dbUser, $this->dbPass, $options);
         } catch (PDOException $e) {
             $this->error = $e->getMessage();
-            echo $this->error;
+            print_r($this->error);die();
         }
     }
 
@@ -72,7 +72,7 @@ class Database
         return $this->statement->fetch(PDO::FETCH_OBJ);
     }
 
-    //  Gets's tyhe row count
+    //  Gets's type row count
     public function rowCount()
     {
         return $this->statement->rowCount();
