@@ -10,13 +10,14 @@ class User
 
     public function register($data)
     {
-        $this->db->query('INSERT INTO users (user_id,user_name,user_email,password) VALUES (:uniqe_id,:username,:email,:password)');
+        $this->db->query('INSERT INTO users (user_id,user_name,user_email,password,created_on) VALUES (:uniqe_id,:username,:email,:password,:date)');
         $uniqu_id = uniqid('', true);
         // Bind Values
         $this->db->bind(':uniqe_id', $uniqu_id);
         $this->db->bind(':username', $data['username']);
         $this->db->bind(':email', $data['email']);
         $this->db->bind(':password', $data['password']);
+        $this->db->bind(':date', date('Y-m-d h:i:s'));
 
         // Execute function
         if ($this->db->execute()) {

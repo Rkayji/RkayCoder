@@ -7,6 +7,28 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Lato", sans-serif;
+  background-color: #f2f2f2;
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  font-size: 50px;
+  margin: 0;
+}
+
+h3 {
+  font-size: 14px;
+  color: #696969;
+  font-weight: 100;
+  font-style: italic;
+}
+
+p {
+  font-size: 18px;
+  color: #666;
 }
 
 .top-nav {
@@ -128,6 +150,99 @@ button#submit {
   text-decoration: none;
 }
 
-.invalidFeedback{
-    color: #ff0000;
+.invalidFeedback {
+  color: #ff0000;
+}
+
+span#userName {
+  color: aquamarine;
+  font-size: 15px;
+  font-family: cursive;
+  font-weight: 700;
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0 -22px;
+}
+
+/* BLOG */
+.dark {
+  background-color: #000000;
+  box-shadow: 0 0 10px #000000;
+}
+
+.container {
+  margin: 0 auto;
+  width: 80%;
+  padding: 100px 0;
+}
+
+.container-item {
+  border-bottom: 1px solid #dcdcdc;
+  padding: 40px 0;
+}
+
+.btn {
+  padding: 8px 18px;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.btn:hover {
+  color: #ffffff;
+}
+
+.green {
+  background-color: #4caf50;
+}
+
+.green:hover {
+  background-color: #64a764;
+  transition: 0.2s ease-in-out;
+}
+
+/* Create Blog */
+
+.center {
+  text-align: center;
+}
+
+input,
+textarea {
+  width: 400px;
+  margin: 20px 0;
+  border: 1px solid #cbcbcb;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+  padding: 8px;
+  font-size: 18px;
+  color: #666;
+}
+
+input {
+  height: 35px;
+}
+
+textarea {
+  height: 200px;
+}
+
+::placeholder {
+  font-size: 14px;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.orange {
+  background-color: orange;
+  color: #ffffff;
+  float: right;
+}
+
+.red {
+  background-color: #ff0000;
+  margin: 0px 20px;
+  padding: 0px 13px;
+  float: right;
+  height: 42px;
+  width: 106px;
 }
