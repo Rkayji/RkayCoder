@@ -1,5 +1,6 @@
 <nav class="top-nav">
-    <ul>
+    <h3 class="text-light mx-2" id="sitename"><?= SITENAME ?></h3>
+    <ul class="mt-3">
         <li><a href="<?= URLROOT ?>?url=pages/index">Home</a></li>
         <li><a href="<?= URLROOT ?>?url=pages/about">About</a></li>
         <li><a href="<?= URLROOT ?>?url=pages/projects">Projects</a></li>
@@ -13,7 +14,7 @@
             <?php endif; ?>
         </li>
         <?php if (isset($_SESSION['username'])) {
-            echo '<span id="userName">'.$_SESSION['username'].'</span>';
+            echo '<span id="userName">' . $_SESSION['username'] . '</span>';
         } ?>
-        </ul>
+    </ul>
 </nav>
