@@ -18,7 +18,7 @@ class Posts extends Controller
     public function create()
     {
         if (!isLoggedIn()) {
-            header('location: ' . URLROOT . '?url=posts');
+            header('location: ' . URLROOT . '/posts');
         }
         $data = [
             'title' => '',
@@ -48,7 +48,7 @@ class Posts extends Controller
 
             if (empty($data['titleError']) && empty($data['bodyError'])) {
                 if ($this->postModel->addPost($data)) {
-                    header('location: ' . URLROOT . '?url=posts');
+                    header('location: ' . URLROOT . '/posts');
                 } else {
                     die('Something went wrong please sumbit Again!');
                 }
@@ -64,9 +64,9 @@ class Posts extends Controller
     {
         $post = $this->postModel->findPostById($id);
         if (!isLoggedIn()) {
-            header('location: ' . URLROOT . '?url=posts');
+            header('location: ' . URLROOT . '/posts');
         } elseif ($post->user_id != $_SESSION['user_id']) {
-            header('location: ' . URLROOT . '?url=posts');
+            header('location: ' . URLROOT . '/posts');
         }
         $data = [
             'post' => $post,
@@ -96,14 +96,9 @@ class Posts extends Controller
                 $data['bodyError'] = "The Body of a post cannot be Empty.";
             }
 
-            if ($this->postModel->findPostById($id)->body == $data['body'] || $this->postModel->findPostById($id)->title == $data['title']) {
-                $data['bodyError'] = "You have to change atleast one value in Body.";
-                $data['titleError'] = "You have to change atleast one value in Title.";
-            }
-
             if (empty($data['titleError']) && empty($data['bodyError'])) {
                 if ($this->postModel->updatePost($data)) {
-                    header('location: ' . URLROOT . '?url=posts');
+                    header('location: ' . URLROOT . '/posts');
                 } else {
                     die('Something went wrong please sumbit Again!');
                 }
@@ -118,20 +113,14 @@ class Posts extends Controller
     {
         $post = $this->postModel->findPostById($id);
         if (!isLoggedIn()) {
-            header('location: ' . URLROOT . '?url=posts');
+            header('location: ' . URLROOT . '/posts');
         } elseif ($post->user_id != $_SESSION['user_id']) {
-            header('location: ' . URLROOT . '?url=posts');
+            header('location: ' . URLROOT . '/posts');
         }
-        $data = [
-            'post' => $post,
-        ];
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
             if ($this->postModel->deletePost($id)) {
-                header('location: ' . URLROOT . '?url=posts');
+                header('location: ' . URLROOT . '/posts');
             } else {
                 die('somethong went wrong.');
             }
-        }
     }
 }

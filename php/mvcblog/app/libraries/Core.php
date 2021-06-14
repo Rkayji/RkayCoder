@@ -8,6 +8,7 @@ class Core
 
     public function __construct()
     {
+        error_reporting(E_ERROR | E_PARSE);
         $url = $this->getUrl();
         // Look in 'controllers' for first value, ucwords capitailize first letter
         if (file_exists('../app/controllers/' . ucwords($url[0]) . '.php')) {

@@ -10,7 +10,7 @@ require APPROOT . '/views/includes/head.php';
 <div class="container">
     <div class="row bg-light">
         <div class="col-md-10">
-            <form action="<?= URLROOT ?>?url=pages/projects" method="post" id="form_id">
+            <form action="<?= URLROOT ?>/pages/projects" method="post" id="form_id">
                 <div class="col-md-4">
                     <div class="mb-3">
                         <label for="forMobile" class="form-label">Enter The Number for Details</label>
@@ -19,7 +19,7 @@ require APPROOT . '/views/includes/head.php';
                     </div>
                 </div>
                 <!-- <button type="submit" class="btn btn-success" name="verify" id="testForm">Submit</button> -->
-                <button type="submit" class="btn btn-success" name="verify" id="testForm" onclick="apiData(event)">Submit</button>
+                  <button type="submit" class="btn btn-success" name="verify" id="testForm" onclick="apiData(event)">Submit</button>
             </form>
         </div>
     </div>

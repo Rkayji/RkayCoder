@@ -23,7 +23,7 @@ class Database
             $this->dbHandler = new PDO($conn, $this->dbUser, $this->dbPass, $options);
         } catch (PDOException $e) {
             $this->error = $e->getMessage();
-            print_r($this->error);die();
+            echo $this->error;
         }
     }
 

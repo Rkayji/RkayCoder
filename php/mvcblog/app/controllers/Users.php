@@ -83,7 +83,7 @@ class Users extends Controller
                 // register user from model function
                 if ($this->userModel->register($data)) {
                     // Redirect to the user login page
-                    header('location: ' . URLROOT . '?url=users/login');
+                    header('location: ' . URLROOT . '/users/login');
                 } else {
                     die('Something went wrong.');
                 }
@@ -158,6 +158,6 @@ class Users extends Controller
         unset($_SESSION['user_id']);
         unset($_SESSION['username']);
         unset($_SESSION['email']);
-        header('location:' . URLROOT.'?url=users/login');
+        header('location:' . URLROOT.'/users/login');
     }
 }

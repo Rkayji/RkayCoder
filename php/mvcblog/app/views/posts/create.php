@@ -11,7 +11,7 @@ require APPROOT . '/views/includes/head.php';
     <h1>
         Create a new Post
     </h1>
-    <form action="<?= URLROOT ?>?url=posts/create" method="post">
+    <form action="<?= URLROOT ?>/posts/create" method="post">
         <div class="form-item">
             <input type="text" name="title" placeholder="Title...">
             <div class="invalidFeedback"><?= $data['titleError'] ?></div>
@@ -21,7 +21,7 @@ require APPROOT . '/views/includes/head.php';
             <div class="invalidFeedback"><?= $data['bodyError'] ?></div>
         </div>
         <div>
-            <button type="submit" class="btn green" name="submit">Submit</button>
+            <button type="submit" class="btn btn-success" name="submit">Submit</button>
         </div>
     </form>
 </div>

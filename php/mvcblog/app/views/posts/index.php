@@ -8,16 +8,16 @@ require APPROOT . '/views/includes/head.php';
 </div>
 <div class="container">
     <?php if (isLoggedIn()) : ?>
-        <a href="<?= URLROOT ?>?url=posts/create" class="btn green">Create</a>
+        <a href="<?= URLROOT ?>/posts/create" class="btn btn-success">Create</a>
     <?php endif; ?>
     <?php foreach ($data['posts'] as $post) : ?>
         <div class="container-item">
-            <?php if (isset($_SESSION['user_id']) && $_SESSION['user_id'] == $post->user_id) : ?>
-                <a href="<?= URLROOT . "?url=posts/update/" . $post->post_id ?>" class="btn orange">Update</a>
-                <form action="<?= URLROOT . "?url=posts/delete/" . $post->post_id ?>" method="post">
-                    <input type="submit" value="delete" name="Delete" class="btn red">
-                </form>
-            <?php endif; ?>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <?php if (isset($_SESSION['user_id']) && $_SESSION['user_id'] == $post->user_id) : ?>
+                    <a href="<?= URLROOT . "/posts/update/" . $post->post_id ?>" class="btn btn-warning">Update</a>
+                    <a class="btn btn-danger" href="<?= URLROOT . "/posts/delete/" . $post->post_id  ?>">Delete</a>
+                <?php endif; ?>
+            </div>
             <h2>
                 <?= $post->title ?>
             </h2>

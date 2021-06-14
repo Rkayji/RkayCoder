@@ -30,7 +30,7 @@ class Pages extends Controller
             'result'=> '',
         ];
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_NUMBER_INT);
 
             $data = [
                 'number' => $_POST['number'],
@@ -42,14 +42,16 @@ class Pages extends Controller
             }
             $access_key = '9a0fa759fed6691d3e465a951e2f1df6';
             $url = 'http://apilayer.net/api/validate?access_key=' . $access_key . '&number=' . $data['number'] . '&country_code=IN&format=1';
-            $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL, $url);
-            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, True);
-            $result = curl_exec($ch);
-            $err = curl_error($ch);
-            curl_close($ch);            
+            $result = json_decode(file_get_contents($url));
+            // $ch = curl_init();
+            // curl_setopt($ch, CURLOPT_URL, $url);
+            // curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+            // curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            // $result = curl_exec($ch);
+            // $err = curl_error($ch);
+            // curl_close($ch);            
             $data['result'] = $result;
+            print_r($result);die();
             $this->view('pages/projects', $data);
         }
         $this->view('pages/projects', $data);
