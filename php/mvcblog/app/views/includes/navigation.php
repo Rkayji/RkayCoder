@@ -1,5 +1,5 @@
 <nav class="top-nav">
-    <h3 class="text-light mx-2" id="sitename"><?= SITENAME ?></h3>
+    <a href="<?= URLROOT ?>" class="text-light mx-2" id="sitename"><?= SITENAME ?></a>
     <ul class="mt-3">
         <li><a href="<?= URLROOT ?>/pages/index">Home</a></li>
         <li><a href="<?= URLROOT ?>/pages/about">About</a></li>

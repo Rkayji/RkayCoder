@@ -246,3 +246,8 @@ textarea {
   height: 42px;
   width: 106px;
 }
+#sitename {
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: 500;
+}

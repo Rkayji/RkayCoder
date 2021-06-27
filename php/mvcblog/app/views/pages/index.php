@@ -11,6 +11,8 @@ require APPROOT . '/views/includes/head.php';
     </div>
 </div>
 <script>
-    let sitename = document.getElementById('sitename');
+    let sitename = document.querySelector('#sitename');
     sitename.classList.add('pt-3');
+    let ul = document.querySelector('ul');
+    ul.classList.remove('mt-3');
 </script>
